@@ -69,6 +69,51 @@ def parse_rules(css):
     return rules
 
 
+# Page key -> built HTML files whose DOM must be styled by that page's CSS.
+# Mirrors the crawl list in tools/css-coverage.mjs. Chrome's CSS coverage has
+# been observed silently reporting genuinely-applied rules as unused (e.g.
+# .gloss-body on glossary.html), so any rule whose selector references a
+# class/id present in the page's own HTML is always kept. Additive only:
+# it can keep more rules than coverage alone, never fewer.
+PAGE_HTML = {
+    'index': ['index.html'],
+    'examples': ['examples.html', 'no-account.html'],
+    'install': ['install.html'],
+    'features': ['features.html'],
+    'getting-started': ['getting-started.html'],
+    'switch': ['switch.html'],
+    'glossary': ['glossary.html'],
+    'pitch-in': ['pitch-in.html'],
+    'beta': ['beta.html'],
+    'credits': ['credits.html'],
+    'privacy': ['privacy.html'],
+    'terms': ['terms.html'],
+    'trainers': ['trainers.html'],
+    'release-notes': ['release-notes.html'],
+    'ai-disclosure': ['ai-disclosure.html'],
+    'program': ['programs/*.html'],
+    'workout': ['workouts/*.html'],
+    '404': ['404.html'],
+}
+
+
+def dom_tokens(page):
+    """Regex matching .class / #id selectors for tokens in the page's HTML."""
+    tokens = set()
+    for pat in PAGE_HTML.get(page, []):
+        for f in ROOT.glob(pat):
+            html = f.read_text()
+            for m in re.findall(r'class="([^"]+)"', html):
+                tokens.update('.' + c for c in m.split())
+            for m in re.findall(r'id="([^"]+)"', html):
+                tokens.add('#' + m)
+    if not tokens:
+        return None
+    # longest-first so .gloss-body matches before .gloss in alternation
+    alts = sorted((re.escape(t) for t in tokens), key=len, reverse=True)
+    return re.compile(r'(?:' + '|'.join(alts) + r')(?![\w-])')
+
+
 def main():
     cov = json.loads(COVERAGE.read_text())
     css = CSS_SRC.read_text()
@@ -88,9 +133,18 @@ def main():
         used = set()
         for r in data['ranges']:
             used.update(range(r['start'], r['end']))
+        dom_re = dom_tokens(page)
+
+        def keep_selector(selector):
+            if STATE_PAT.search(selector):
+                return True
+            if dom_re and dom_re.search(selector):
+                return True
+            return False
+
         kept = []
         for selector, text, start, end in rules:
-            if STATE_PAT.search(selector):
+            if keep_selector(selector):
                 kept.append(text)
                 continue
             if selector.startswith('@media'):
@@ -101,7 +155,7 @@ def main():
                 for isel, itext, istart, iend in inner:
                     abs_start = start + offset + istart
                     abs_end = start + offset + iend
-                    if STATE_PAT.search(isel) or any(b in used for b in range(abs_start, abs_end)):
+                    if keep_selector(isel) or any(b in used for b in range(abs_start, abs_end)):
                         kept_inner.append(itext)
                 if kept_inner:
                     kept.append(selector + '{' + ''.join(kept_inner) + '}')
