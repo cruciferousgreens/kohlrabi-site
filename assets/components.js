@@ -66,8 +66,8 @@
             links +
             '<a class="button white nav-cta' + (pitchCurrent ? ' nav-current' : '') + '"' +
               (pitchCurrent ? ' aria-current="page"' : '') +
-              ' href="' + r + 'pitch-in.html">Pitch in ' + HEART_SVG + '</a>' +
-            '<a class="button primary nav-cta" href="https://kohlrabi.us">Start tracking <span class="arrow" aria-hidden="true">→</span></a>' +
+              ' href="' + r + 'pitch-in.html" data-plausible="Pitch in">Pitch in ' + HEART_SVG + '</a>' +
+            '<a class="button primary nav-cta" data-plausible="Start tracking" href="https://kohlrabi.us">Start tracking <span class="arrow" aria-hidden="true">→</span></a>' +
           '</div>' +
         '</div>' +
       '</nav>';
@@ -83,7 +83,7 @@
           '<div class="footer-brand-block">' +
             '<a class="footer-brand" href="' + r + 'index.html">Kohlrabi</a>' +
             '<p class="footer-copy">Free workout tracking, by <a href="https://cruciferousgreens.com">Cruciferous Greens</a>.</p>' +
-            '<a class="button primary footer-train" href="https://kohlrabi.us">Train now</a>' +
+            '<a class="button primary footer-train" data-plausible="Train now" href="https://kohlrabi.us">Train now</a>' +
           '</div>' +
           '<nav class="footer-cols" aria-label="Footer">' +
             '<div class="footer-col">' +
@@ -136,7 +136,7 @@
     var url = esc(shareUrl || 'https://kohlrabi.us');
     var attr = shareUrl ? ' data-share="' + esc(shareUrl) + '"' : '';
     return '<div class="card-cta">' +
-      '<a class="button primary card-start" href="' + url + '">Start <span class="arrow" aria-hidden="true">&rarr;</span></a>' +
+      '<a class="button primary card-start" data-plausible="Example: Start" href="' + url + '">Start <span class="arrow" aria-hidden="true">&rarr;</span></a>' +
       '<button class="button secondary card-copy" type="button"' + attr + '>Copy</button>' +
     '</div>';
   }
@@ -156,7 +156,7 @@
 
   function copyCta(shareUrl) {
     return '<div class="detail-cta">' +
-      '<a class="button primary" href="' + esc(shareUrl || 'https://kohlrabi.us') + '">Try it in the app <span class="arrow" aria-hidden="true">&rarr;</span></a>' +
+      '<a class="button primary" data-plausible="Example: Try it" href="' + esc(shareUrl || 'https://kohlrabi.us') + '">Try it in the app <span class="arrow" aria-hidden="true">&rarr;</span></a>' +
       '<button class="subtle-copy" type="button" data-share="' + esc(shareUrl || '') + '">Copy link</button>' +
     '</div>';
   }
@@ -409,7 +409,9 @@
       kind === 'program-detail' || kind === 'workout-detail' ||
       kind === 'workout-share' || kind === 'program-share';
     if (isExample !== examples) return;
-    if (kind === 'nav') el.innerHTML = nav(el.getAttribute('data-page') || '', root);
+    /* The nav is server-rendered by build.py for first paint; only render it
+       here if the slot is empty (e.g. a stale cached page). */
+    if (kind === 'nav') { if (!el.querySelector('nav.site-nav')) el.innerHTML = nav(el.getAttribute('data-page') || '', root); }
     else if (kind === 'footer') el.innerHTML = footer(root);
     else if (kind === 'workout-cards') el.innerHTML = workoutCards();
     else if (kind === 'program-cards') el.innerHTML = programCards();
