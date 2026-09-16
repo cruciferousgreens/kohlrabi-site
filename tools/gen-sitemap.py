@@ -29,7 +29,6 @@ PAGES = [
     ('getting-started', '0.9', 'monthly'),
     ('switch', '0.8', 'monthly'),
     ('trainers', '0.8', 'monthly'),
-    ('beta', '0.7', 'monthly'),
     ('release-notes', '0.6', 'monthly'),
     ('glossary', '0.5', 'monthly'),
     ('credits', '0.5', 'yearly'),
@@ -64,9 +63,9 @@ for kind, slug, srcfile, title in entries:
     lm = lastmod(srcfile)
     title = title or slug
     if kind == 'W':
-        workouts.append((f'workouts/{slug}.html', lm, title))
+        workouts.append((f'workouts/{slug}', lm, title))
     else:
-        programs.append((f'programs/{slug}.html', lm, title))
+        programs.append((f'programs/{slug}', lm, title))
 workouts.sort(); programs.sort()
 
 def urlset(items):
@@ -131,12 +130,12 @@ for p, _pr, _cf in PAGES:
     url = BASE + '/' + p
     L.append(md_link(page_title(p), url))
 L.append('\n## Example workouts\n')
-L.append('Full workout pages live at /workouts/<slug>.html (each lists its exercises, '
+L.append('Full workout pages live at /workouts/<slug> (each lists its exercises, '
          'sets, and reps, with a share link into the app):\n')
 for loc, _lm, title in workouts:
     L.append(md_link(title, f'{BASE}/{loc}'))
 L.append('\n## Example programs\n')
-L.append('Full program pages live at /programs/<slug>.html (overview plus every '
+L.append('Full program pages live at /programs/<slug> (overview plus every '
          'workout in the program):\n')
 for loc, _lm, title in programs:
     L.append(md_link(title, f'{BASE}/{loc}'))
@@ -144,9 +143,10 @@ L.append('\n## Notes\n')
 L.append('- Sitemap index: https://getkohlrabi.com/sitemap.xml '
          '(pages, workouts, and programs each have their own sitemap).')
 L.append('- /workout and /program are generic resolvers, not canonical pages; '
-         'always link the /workouts/<slug>.html or /programs/<slug>.html form.')
+         'always link the /workouts/<slug> or /programs/<slug> form.')
 L.append('- The app itself lives at https://kohlrabi.us and requires '
-         'JavaScript; the marketing pages above are static HTML.')
+         'JavaScript; the marketing pages above are static HTML (detail pages '
+         'and example cards are server-rendered at build time).')
 L.append('- Coaching and the blog live at https://cruciferousgreens.com (separate site).')
 open('llms.txt', 'w').write('\n'.join(L) + '\n')
 

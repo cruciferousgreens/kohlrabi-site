@@ -1,7 +1,8 @@
 # Cloudflare Pages redirects/rewrites.
-# The 200 rewrites serve the generic detail pages while keeping the pretty
-# per-workout / per-program URLs in the address bar. The slug is read from
-# the URL path by components.js, so no individual HTML files are needed.
+# Per-workout / per-program detail pages are generated as static files at
+# build time (workouts/<slug>.html, programs/<slug>.html); static files take
+# precedence, so the rewrites below only catch unknown slugs, serving the
+# generic detail pages (which read the slug from the URL path) as a fallback.
 # (Rewriting to the extensionless /workout and /program avoids Cloudflare's
 # .html -> pretty-URL 308, which would strip the slug from the address bar.)
 /workouts/*  /workout  200

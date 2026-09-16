@@ -35,10 +35,10 @@
   /* ---------- navigation ---------- */
 
   var NAV_LINKS = [
-    { page: 'getting-started', href: 'getting-started.html', label: 'Get started' },
-    { page: 'switch', href: 'switch.html', label: 'Switch to Kohlrabi' },
-    { page: 'examples', href: 'examples.html', label: 'Example Programs' },
-    { page: 'glossary', href: 'glossary.html', label: 'Glossary of terms' }
+    { page: 'getting-started', href: 'getting-started', label: 'Get started' },
+    { page: 'switch', href: 'switch', label: 'Switch to Kohlrabi' },
+    { page: 'examples', href: 'examples', label: 'Example Programs' },
+    { page: 'glossary', href: 'glossary', label: 'Glossary of terms' }
   ];
 
   function nav(activePage, root) {
@@ -53,7 +53,7 @@
     return '' +
       '<nav class="site-nav" aria-label="Primary navigation">' +
         '<div class="nav-inner">' +
-          '<a class="brand" href="' + r + 'index.html" aria-label="Kohlrabi home">' +
+          '<a class="brand" href="' + (r || '/') + '" aria-label="Kohlrabi home">' +
             '<svg width="96" height="96" viewBox="0 0 192 192" aria-hidden="true" focusable="false"><rect width="192" height="192" rx="35" fill="#2e7d32"/><path d="M95.0 127.5L105.9 103.5L141.9 89.1L146.7 81.3L138.9 69.6L60.7 45.6L48.3 46.6L45.6 60.7L70.6 141.6L85.7 145.7L95.0 127.9Z" fill="none" stroke="#fff" stroke-width="10.6" stroke-linejoin="round" stroke-linecap="round"/></svg>' +
             '<span>Kohlrabi</span>' +
           '</a>' +
@@ -66,7 +66,7 @@
             links +
             '<a class="button white nav-cta' + (pitchCurrent ? ' nav-current' : '') + '"' +
               (pitchCurrent ? ' aria-current="page"' : '') +
-              ' href="' + r + 'pitch-in.html" data-plausible="Pitch in">Pitch in ' + HEART_SVG + '</a>' +
+              ' href="' + r + 'pitch-in" data-plausible="Pitch in">Pitch in ' + HEART_SVG + '</a>' +
             '<a class="button primary nav-cta" data-plausible="Start tracking" href="https://kohlrabi.us">Start tracking <span class="arrow" aria-hidden="true">→</span></a>' +
           '</div>' +
         '</div>' +
@@ -211,7 +211,9 @@
     var lede = el.querySelector('.subpage-lede');
     var title = (h1 && h1.textContent) ? h1.textContent.trim() + ' - Kohlrabi' : '';
     var desc = (lede && lede.textContent) ? lede.textContent.trim() : '';
-    var url = String(location.href).split('#')[0];
+    /* Canonical + og:url use the clean URL form (no .html), matching the
+       server-rendered canonicals and the sitemap. */
+    var url = String(location.href).split('#')[0].replace(/\.html$/, '');
     if (title) {
       document.title = title;
       setMetaAttr('meta[property="og:title"]', 'content', title);
