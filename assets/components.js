@@ -35,10 +35,10 @@
   /* ---------- navigation ---------- */
 
   var NAV_LINKS = [
-    { page: 'switch', href: 'switch.html', label: 'Switch' },
-    { page: 'examples', href: 'examples.html', label: 'Examples' },
-    { page: 'glossary', href: 'glossary.html', label: 'Glossary' },
-    { page: 'beta', href: 'beta.html', label: 'Beta' }
+    { page: 'getting-started', href: 'getting-started.html', label: 'Get started' },
+    { page: 'switch', href: 'switch.html', label: 'Switch to Kohlrabi' },
+    { page: 'examples', href: 'examples.html', label: 'Example Programs' },
+    { page: 'glossary', href: 'glossary.html', label: 'Glossary of terms' }
   ];
 
   function nav(activePage, root) {
