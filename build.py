@@ -200,7 +200,7 @@ for (const f of files) eval(fs.readFileSync(f, 'utf8'));
 window.CG_EXAMPLES.workouts.forEach(w => window.CG.WORKOUTS.push(w));
 window.CG_EXAMPLES.programs.forEach(p => window.CG.PROGRAMS.push(p));
 const out = { cards: window.CG.allExampleCards(), workouts: [], programs: [],
-  spotlight: ['mentzer-heavy-duty', 'phraks', '531-beginners', 'gzclp']
+  spotlight: ['mentzer-heavy-duty', 'phraks']
     .map(id => { const p = window.CG.PROGRAMS.find(p => p.id === id);
                  return p ? window.CG.programCard(p) : ''; }).join('\n') };
 for (const w of window.CG.WORKOUTS) out.workouts.push({
