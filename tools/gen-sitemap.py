@@ -27,6 +27,7 @@ PAGES = [
     ('examples', '0.9', 'weekly'),
     ('features', '0.9', 'monthly'),
     ('getting-started', '0.9', 'monthly'),
+    ('no-account', '0.8', 'monthly'),
     ('switch', '0.8', 'monthly'),
     ('trainers', '0.8', 'monthly'),
     ('release-notes', '0.6', 'monthly'),

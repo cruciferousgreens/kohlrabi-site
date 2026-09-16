@@ -199,7 +199,10 @@ const files = JSON.parse(fs.readFileSync('assets/examples/manifest.js', 'utf8')
 for (const f of files) eval(fs.readFileSync(f, 'utf8'));
 window.CG_EXAMPLES.workouts.forEach(w => window.CG.WORKOUTS.push(w));
 window.CG_EXAMPLES.programs.forEach(p => window.CG.PROGRAMS.push(p));
-const out = { cards: window.CG.allExampleCards(), workouts: [], programs: [] };
+const out = { cards: window.CG.allExampleCards(), workouts: [], programs: [],
+  spotlight: ['mentzer-heavy-duty', 'phraks', '531-beginners', 'gzclp']
+    .map(id => { const p = window.CG.PROGRAMS.find(p => p.id === id);
+                 return p ? window.CG.programCard(p) : ''; }).join('\n') };
 for (const w of window.CG.WORKOUTS) out.workouts.push({
   slug: w.slug, title: w.title, desc: w.desc, share: w.share,
   program: w.program || null, html: window.CG.workoutDetail(w.slug, '/') });
@@ -299,6 +302,21 @@ def inject_example_cards(content, ex):
     return content[:m.start()] + block + content[m.end():]
 
 
+def inject_spotlight_cards(content, ex):
+    """Fill the no-account page's template slot with server-rendered program
+    cards (Mentzer Heavy Duty + the reddit-sourced templates), reusing the
+    examples-page card pattern."""
+    m = re.search(r'(<div class="example-workouts" data-spotlight>)[\s\S]*?(</div>)',
+                  content)
+    if not m:
+        print('warning: spotlight slot not found; leaving empty', file=sys.stderr)
+        return content
+    cards = '\n'.join(('      ' + ln) if ln.strip() else ln
+                      for ln in ex['spotlight'].split('\n'))
+    block = m.group(1) + '\n' + cards + '\n      ' + m.group(2)
+    return content[:m.start()] + block + content[m.end():]
+
+
 def main():
     v = build_version()
     try:
@@ -315,6 +333,8 @@ def main():
                 assert meta.get(k), f'{path.name}: missing {k}'
         if path.name == 'examples.html' and ex:
             content = inject_example_cards(content, ex)
+        if path.name == 'no-account.html' and ex:
+            content = inject_spotlight_cards(content, ex)
         (ROOT / path.name).write_text(render(meta, content, v))
         built.append(path.name)
     print(f'built {len(built)} pages (v={v})')

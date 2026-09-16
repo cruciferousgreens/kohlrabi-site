@@ -89,6 +89,7 @@
             '<div class="footer-col">' +
               '<h3>The app</h3>' +
               '<a href="' + r + 'getting-started.html">Getting started</a>' +
+              '<a href="' + r + 'no-account">No account needed</a>' +
               '<a href="' + r + 'examples.html">Example workouts</a>' +
               '<a href="' + r + 'switch.html">Switch</a>' +
               '<a href="' + r + 'glossary.html">Glossary</a>' +
@@ -475,6 +476,7 @@
     musclePills: musclePills,
     bodyMap: bodyMap,
     allExampleCards: allExampleCards,
+    programCard: programCard,
     WORKOUTS: WORKOUTS,
     mount: mount,
     mountExamples: mountExamples
