@@ -1,7 +1,7 @@
 // assets/examples/workouts/kettlebell-circuit.js
-// Kettlebell circuit — example workout.
+// Kettlebell circuit - example workout.
 // Just fill in the fields below. The detail page (workouts/kettlebell-circuit.html)
-// is generated automatically — no HTML file needed.
+// is generated automatically - no HTML file needed.
 // Add this file's path to ../manifest.js to include it.
 
 exampleWorkout(({

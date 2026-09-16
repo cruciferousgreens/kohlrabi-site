@@ -33,6 +33,7 @@ const pages = [
   ['ai-disclosure', ['ai-disclosure']],
   ['program', ['programs/arnold-blueprint-to-mass']],
   ['workout', ['workouts/arnold-golden-six']],
+  ['404', ['404']],
 ];
 
 const browser = await puppeteer.launch({

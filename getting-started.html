@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Getting started - Kohlrabi">
 <meta name="twitter:description" content="A walkthrough of the Kohlrabi workout app: the shell, logging, suggestions, programs, charts, sharing, and the math. Draft, not yet published.">
 <meta name="twitter:image" content="https://getkohlrabi.com/assets/og-image.png?v=4">
-  <link rel="stylesheet" href="assets/css/getting-started.css?v=377a09e" />
+  <link rel="stylesheet" href="assets/css/getting-started.css?v=da357fa" />
 
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-LP_xeCxd20Jub1_kcCzzn.js"></script>
@@ -177,7 +177,7 @@
                   <div class="suggestion-name"><span class="suggestion-exercise">Squat (Barbell)</span><span>Load +</span></div>
                   <div class="suggestion-change"><span>225 lb &middot; 12 reps</span><span aria-hidden="true">&rarr;</span><strong>230 lb &middot; 8 reps</strong></div>
                 </button>
-                <p class="demo-basis">Top set 225 &times; 12 @ RPE 8, working the 8&ndash;12 range</p>
+                <p class="demo-basis">Top set 225 &times; 12 @ RPE 8, working the 8-12 range</p>
               </div>
             </div>
           </div>
@@ -352,7 +352,7 @@
           <h3>%1RM target</h3>
           <div class="math-block">
             <p class="math-formula">snap(basis <span class="op">&times;</span> pct <span class="op">&divide;</span> 100)</p>
-            <p class="math-def"><strong>Basis</strong> = your training max, or your best same-rep-range estimated 1RM. <strong>pct</strong> defaults to <strong>75%</strong>, clamped 1&ndash;100.</p>
+            <p class="math-def"><strong>Basis</strong> = your training max, or your best same-rep-range estimated 1RM. <strong>pct</strong> defaults to <strong>75%</strong>, clamped 1-100.</p>
           </div>
         </div>
         </details>
@@ -455,18 +455,18 @@
           <div class="adv-card"><h3>RPE trigger</h3><div class="appfrag" role="img" aria-label="App example: RPE trigger pills with 8 selected"><div class="rep-preset-row" id="settingsRpePills" role="group"><span class="rep-preset" aria-pressed="false">7</span><span class="rep-preset" aria-pressed="true">8</span><span class="rep-preset" aria-pressed="false">9</span></div></div><p>Your top set at or under this earns progression.</p></div>
           <div class="adv-card"><h3>Increment type &amp; value</h3><p>Pounds or percent. Both round to the nearest half pound.</p></div>
           <div class="adv-card"><h3>% of 1RM</h3><p>The default percent for %1RM mode.</p></div>
-          <div class="adv-card"><h3>Default focus</h3><div class="appfrag" role="img" aria-label="App example: default focus pills with Hypertrophy selected"><div class="rep-preset-row" role="group"><span class="rep-preset" aria-pressed="false">Strength · 1–5</span><span class="rep-preset" aria-pressed="true">Hypertrophy · 6–12</span><span class="rep-preset" aria-pressed="false">Endurance · 12–20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div></div>
+          <div class="adv-card"><h3>Default focus</h3><div class="appfrag" role="img" aria-label="App example: default focus pills with Hypertrophy selected"><div class="rep-preset-row" role="group"><span class="rep-preset" aria-pressed="false">Strength · 1-5</span><span class="rep-preset" aria-pressed="true">Hypertrophy · 6-12</span><span class="rep-preset" aria-pressed="false">Endurance · 12-20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div></div>
           <div class="adv-card"><h3>Default rep range</h3><div class="appfrag" role="img" aria-label="App example: default rep range fields set to min 6, max 12"><div class="settings-pair"><label class="rule-field"><span>Min</span><input type="number" value="6" readonly tabindex="-1"></label><label class="rule-field"><span>Max</span><input type="number" value="12" readonly tabindex="-1"></label></div></div><p>The rails double progression runs on.</p></div>
           <div class="adv-card"><h3>Time step</h3><div class="appfrag" role="img" aria-label="App example: time step pills with 5 seconds selected"><div class="step-pills" role="group"><span data-step="5" aria-pressed="true">5s</span><span data-step="10" aria-pressed="false">10s</span><span data-step="15" aria-pressed="false">15s</span><span data-step="30" aria-pressed="false">30s</span></div></div></div>
-          <div class="adv-card"><h3>Vary rep ranges by week</h3><div class="appfrag" role="img" aria-label="App example: weekly rep range wave, weeks 1 to 4 set to 1-5, 6-12, 12-20, then 1-5"><div class="settings-subhead">Default weekly rep range</div><div class="week-range-row"><strong>Week 1</strong><div class="week-range-pills" role="group" aria-label="Week 1 rep range"><span class="rep-preset" aria-pressed="true">1–5</span><span class="rep-preset" aria-pressed="false">6–12</span><span class="rep-preset" aria-pressed="false">12–20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 2</strong><div class="week-range-pills" role="group" aria-label="Week 2 rep range"><span class="rep-preset" aria-pressed="false">1–5</span><span class="rep-preset" aria-pressed="true">6–12</span><span class="rep-preset" aria-pressed="false">12–20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 3</strong><div class="week-range-pills" role="group" aria-label="Week 3 rep range"><span class="rep-preset" aria-pressed="false">1–5</span><span class="rep-preset" aria-pressed="false">6–12</span><span class="rep-preset" aria-pressed="true">12–20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 4</strong><div class="week-range-pills" role="group" aria-label="Week 4 rep range"><span class="rep-preset" aria-pressed="true">1–5</span><span class="rep-preset" aria-pressed="false">6–12</span><span class="rep-preset" aria-pressed="false">12–20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div></div></div>
+          <div class="adv-card"><h3>Vary rep ranges by week</h3><div class="appfrag" role="img" aria-label="App example: weekly rep range wave, weeks 1 to 4 set to 1-5, 6-12, 12-20, then 1-5"><div class="settings-subhead">Default weekly rep range</div><div class="week-range-row"><strong>Week 1</strong><div class="week-range-pills" role="group" aria-label="Week 1 rep range"><span class="rep-preset" aria-pressed="true">1-5</span><span class="rep-preset" aria-pressed="false">6-12</span><span class="rep-preset" aria-pressed="false">12-20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 2</strong><div class="week-range-pills" role="group" aria-label="Week 2 rep range"><span class="rep-preset" aria-pressed="false">1-5</span><span class="rep-preset" aria-pressed="true">6-12</span><span class="rep-preset" aria-pressed="false">12-20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 3</strong><div class="week-range-pills" role="group" aria-label="Week 3 rep range"><span class="rep-preset" aria-pressed="false">1-5</span><span class="rep-preset" aria-pressed="false">6-12</span><span class="rep-preset" aria-pressed="true">12-20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div><div class="week-range-row"><strong>Week 4</strong><div class="week-range-pills" role="group" aria-label="Week 4 rep range"><span class="rep-preset" aria-pressed="true">1-5</span><span class="rep-preset" aria-pressed="false">6-12</span><span class="rep-preset" aria-pressed="false">12-20</span><span class="rep-preset" aria-pressed="false">15+</span><span class="rep-preset" aria-pressed="false">AMRAP</span></div></div></div></div>
           <div class="adv-card"><h3>Cloud backup</h3></div>
           <div class="adv-card"><h3>Dumbbell specific tracking</h3></div>
           <div class="adv-card"><h3>Themes</h3></div>
           <div class="adv-card"><h3>Import</h3><div class="appfrag" role="img" aria-label="App example: import preview with one exercise needing review">
             <div class="ob-imp-sum"><strong>1</strong> saved workout, <strong>9</strong> planned sets found in your CSV file. <strong>1</strong> needs your review, <strong>2</strong> auto-matched.</div>
             <div class="ob-imp-workout"><strong>Upper A</strong>
-              <div class="ob-imp-ex"><span class="ob-imp-nm">Bench Press <span class="ob-muted">(3 sets &middot; 6&ndash;12 reps)</span></span><span class="ob-imp-ok">✓ Bench Press</span></div>
-              <div class="ob-imp-ex"><span class="ob-imp-nm">Incline DB Press <span class="ob-muted">(3 sets &middot; 8&ndash;12 reps)</span></span><span class="ob-imp-no">unmatched</span><select class="ob-input ob-imp-sel" tabindex="-1" aria-hidden="true"><option>Choose the matching exercise&hellip;</option><option>Incline Dumbbell Bench Press</option></select></div>
+              <div class="ob-imp-ex"><span class="ob-imp-nm">Bench Press <span class="ob-muted">(3 sets &middot; 6-12 reps)</span></span><span class="ob-imp-ok">✓ Bench Press</span></div>
+              <div class="ob-imp-ex"><span class="ob-imp-nm">Incline DB Press <span class="ob-muted">(3 sets &middot; 8-12 reps)</span></span><span class="ob-imp-no">unmatched</span><select class="ob-input ob-imp-sel" tabindex="-1" aria-hidden="true"><option>Choose the matching exercise&hellip;</option><option>Incline Dumbbell Bench Press</option></select></div>
             </div>
             <button class="ob-imp-toggle" type="button" tabindex="-1" aria-hidden="true"><span class="ob-imp-tg-chev">›</span> ✓ 2 auto-matched <span class="ob-muted">tap to review</span></button>
           </div><p><strong>Settings &rarr; Import.</strong> Bring the app's own export, a CSV, or a supported app's file. The preview auto-matches the exercises it recognizes. For the rest, pick the match from the dropdown or add the exercise as new. Nothing joins your log until you confirm.</p></div>
@@ -479,9 +479,9 @@
 
 <div data-cg="footer"></div>
 
-  <script defer src="assets/cg-data.js?v=377a09e"></script>
-  <script defer src="assets/components.js?v=377a09e"></script>
-  <script defer src="assets/native.js?v=377a09e"></script>
-  <script defer src="assets/site.js?v=377a09e"></script>
+  <script defer src="assets/cg-data.js?v=da357fa"></script>
+  <script defer src="assets/components.js?v=da357fa"></script>
+  <script defer src="assets/native.js?v=da357fa"></script>
+  <script defer src="assets/site.js?v=da357fa"></script>
 </body>
 </html>

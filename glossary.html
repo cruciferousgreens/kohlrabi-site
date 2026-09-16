@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Glossary - Kohlrabi">
 <meta name="twitter:description" content="Every equation the Kohlrabi workout app computes, every term it uses, every progression setting it offers. Draft, not yet published.">
 <meta name="twitter:image" content="https://getkohlrabi.com/assets/og-image.png?v=4">
-  <link rel="stylesheet" href="assets/css/glossary.css?v=377a09e" />
+  <link rel="stylesheet" href="assets/css/glossary.css?v=da357fa" />
 
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-LP_xeCxd20Jub1_kcCzzn.js"></script>
@@ -90,7 +90,7 @@
       <div class="math-block">
         <p class="math-caption"><span class="math-num">06</span>%1RM target</p>
         <p class="math-formula">snap_to_increment(basis <span class="op">&times;</span> pct <span class="op">&divide;</span> 100)</p>
-        <p class="math-def"><strong>Basis</strong> = your training max, or your best same-rep-range estimated 1RM. <strong>pct</strong> defaults to <strong>75%</strong>, clamped 1&ndash;100. The result snaps to your increment grid (05), not plates, and is set at your range-minimum reps.</p>
+        <p class="math-def"><strong>Basis</strong> = your training max, or your best same-rep-range estimated 1RM. <strong>pct</strong> defaults to <strong>75%</strong>, clamped 1-100. The result snaps to your increment grid (05), not plates, and is set at your range-minimum reps.</p>
       </div>
 
       <div class="math-block">
@@ -120,13 +120,13 @@
       <div class="math-block">
         <p class="math-caption"><span class="math-num">11</span>Time progression</p>
         <p class="math-formula">latest <span class="op">+</span> step <span class="op">&times;</span> <span class="hl">(10 &minus; RPE)</span>, min 2 steps, clamped to range</p>
-        <p class="math-def">Timed work progresses in seconds, scaled by RPE headroom like reps (04), and always lands on whole seconds. Default step is 5 seconds, clamped to the time range. On deload weeks, unweighted timed work holds its seconds as-is &mdash; deloads reduce load only. Weighted timed work keeps its seconds and only the load deloads.</p>
+        <p class="math-def">Timed work progresses in seconds, scaled by RPE headroom like reps (04), and always lands on whole seconds. Default step is 5 seconds, clamped to the time range. On deload weeks, unweighted timed work holds its seconds as-is - deloads reduce load only. Weighted timed work keeps its seconds and only the load deloads.</p>
       </div>
 
       <div class="math-block">
         <p class="math-caption"><span class="math-num">12</span>Deload week</p>
         <p class="math-formula">load <span class="op">&times;</span> <span class="hl">d%</span>, every <span class="hl">n</span> weeks</p>
-        <p class="math-def">A scheduled lighter week: the normal prescription at the deload intensity. Defaults <strong>60%</strong> every <strong>4</strong> weeks; intensity clamps to 40&ndash;80%. Bodyweight rep work scales reps to the deload intensity instead, since there is no load to reduce; unweighted timed work holds its seconds as-is.</p>
+        <p class="math-def">A scheduled lighter week: the normal prescription at the deload intensity. Defaults <strong>60%</strong> every <strong>4</strong> weeks; intensity clamps to 40-80%. Bodyweight rep work scales reps to the deload intensity instead, since there is no load to reduce; unweighted timed work holds its seconds as-is.</p>
       </div>
 
       <div class="math-block">
@@ -177,13 +177,13 @@
         <div class="adv-card"><h3>%1RM</h3><p><strong>A percent of your one-rep max.</strong> Used to prescribe loads. The app's default is 75%.</p></div>
         <div class="adv-card"><h3>Estimated 1RM</h3><p><strong>What the math says you could lift once,</strong> from a logged set's weight, reps, and RPE.</p></div>
         <div class="adv-card"><h3>Training max</h3><p><strong>The 1RM the %1RM math works from.</strong> Enter it by hand, or the app uses your best same-rep-range estimated 1RM.</p></div>
-        <div class="adv-card"><h3>RPE</h3><p><strong>Rate of perceived exertion, 1&ndash;10,</strong> in half steps. How hard the set felt. 10 means nothing left.</p></div>
+        <div class="adv-card"><h3>RPE</h3><p><strong>Rate of perceived exertion, 1-10,</strong> in half steps. How hard the set felt. 10 means nothing left.</p></div>
         <div class="adv-card"><h3>RIR</h3><p><strong>Reps in reserve.</strong> 10 minus RPE. RPE 8 means about 2 reps left in you.</p></div>
         <div class="adv-card"><h3>Top set</h3><p><strong>The heaviest set of the session;</strong> ties go to more reps. The set the progression engine reads.</p></div>
-        <div class="adv-card"><h3>Rep range</h3><p><strong>The min and max reps an exercise works inside,</strong> e.g. 6&ndash;12. Double progression climbs the range, then adds weight and restarts at the bottom.</p></div>
-        <div class="adv-card"><h3>Hypertrophy</h3><p><strong>Training for muscle growth.</strong> The app's default focus, roughly 6&ndash;12 reps.</p></div>
-        <div class="adv-card"><h3>Strength</h3><p><strong>Training for maximal force.</strong> Roughly 1&ndash;5 reps.</p></div>
-        <div class="adv-card"><h3>Endurance</h3><p><strong>Training to sustain effort.</strong> Roughly 12&ndash;20 reps.</p></div>
+        <div class="adv-card"><h3>Rep range</h3><p><strong>The min and max reps an exercise works inside,</strong> e.g. 6-12. Double progression climbs the range, then adds weight and restarts at the bottom.</p></div>
+        <div class="adv-card"><h3>Hypertrophy</h3><p><strong>Training for muscle growth.</strong> The app's default focus, roughly 6-12 reps.</p></div>
+        <div class="adv-card"><h3>Strength</h3><p><strong>Training for maximal force.</strong> Roughly 1-5 reps.</p></div>
+        <div class="adv-card"><h3>Endurance</h3><p><strong>Training to sustain effort.</strong> Roughly 12-20 reps.</p></div>
         <div class="adv-card"><h3>AMRAP</h3><p><strong>As many reps as possible.</strong> One all-out set instead of a fixed rep target.</p></div>
         <div class="adv-card"><h3>Double progression</h3><p><strong>Add reps first;</strong> at the top of the range, add weight and drop back to the bottom. The default progression mode.</p></div>
         <div class="adv-card"><h3>Linear progression</h3><p><strong>Add the increment every session,</strong> no RPE gate. Reps carry over; only the load moves.</p></div>
@@ -208,7 +208,7 @@
         <div class="adv-card"><h3>Time step</h3><p><strong>For timed work, how many seconds each progression adds.</strong> Default 5 s.</p></div>
         <div class="adv-card"><h3>Timed work</h3><p><strong>Exercises tracked in seconds</strong> (planks, holds) instead of reps.</p></div>
         <div class="adv-card"><h3>Dumbbell weight</h3><p><strong>What each hand holds.</strong> Entry and display default to per-dumbbell; the app stores the combined total of both bells, and volume and PRs use that stored total.</p></div>
-        <div class="adv-card"><h3>Set tags</h3><p><strong>Labels on a set:</strong> warmup, dropset, Failure, and more. Labels only &mdash; except warmup, which sits out the top-set race.</p></div>
+        <div class="adv-card"><h3>Set tags</h3><p><strong>Labels on a set:</strong> warmup, dropset, Failure, and more. Labels only - except warmup, which sits out the top-set race.</p></div>
       </div>
         </div>
       </details>
@@ -229,8 +229,8 @@
         <div class="adv-card"><h3>RPE trigger</h3><p>Pills: 7, 8, 9 (default 8). Your top set at or under the trigger earns progression.</p></div>
         <div class="adv-card"><h3>Increment type &amp; value</h3><p>Pounds (default 5 lb): new loads land on the increment grid. Percent: weight &times; (1 + value &divide; 100), rounded to the nearest whole pound.</p></div>
         <div class="adv-card"><h3>% of 1RM</h3><p>The default percent for %1RM mode is 75%.</p></div>
-        <div class="adv-card"><h3>Focus</h3><p>Hypertrophy 6&ndash;12 is the default; also Strength 1&ndash;5, Endurance 12&ndash;20, 15+, AMRAP.</p></div>
-        <div class="adv-card"><h3>Rep range</h3><p>Defaults to 6&ndash;12 &mdash; the rails double progression runs on.</p></div>
+        <div class="adv-card"><h3>Focus</h3><p>Hypertrophy 6-12 is the default; also Strength 1-5, Endurance 12-20, 15+, AMRAP.</p></div>
+        <div class="adv-card"><h3>Rep range</h3><p>Defaults to 6-12 - the rails double progression runs on.</p></div>
         <div class="adv-card"><h3>Time step</h3><p>5, 10, 15, or 30 seconds for timed work (default 5s).</p></div>
         <div class="adv-card"><h3>Vary rep ranges by week</h3><p>Optional undulating periodization for new programs. Off by default.</p></div>
         <div class="adv-card"><h3>Auto Deload</h3><p>A lighter week every 4 weeks at 60% intensity, for new programs. Off by default.</p></div>
@@ -251,9 +251,9 @@
 
 <div data-cg="footer"></div>
 
-  <script defer src="assets/cg-data.js?v=377a09e"></script>
-  <script defer src="assets/components.js?v=377a09e"></script>
-  <script defer src="assets/native.js?v=377a09e"></script>
-  <script defer src="assets/site.js?v=377a09e"></script>
+  <script defer src="assets/cg-data.js?v=da357fa"></script>
+  <script defer src="assets/components.js?v=da357fa"></script>
+  <script defer src="assets/native.js?v=da357fa"></script>
+  <script defer src="assets/site.js?v=da357fa"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Kohlrabi site — shared components.
+/* Kohlrabi site - shared components.
  *
  * Repeatable elements live here as data + template functions, so every page
  * keeps only its own content in HTML. A page drops in placeholders:

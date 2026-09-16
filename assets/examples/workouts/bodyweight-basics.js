@@ -1,7 +1,7 @@
 // assets/examples/workouts/bodyweight-basics.js
-// Bodyweight basics — example workout.
+// Bodyweight basics - example workout.
 // Just fill in the fields below. The detail page (workouts/bodyweight-basics.html)
-// is generated automatically — no HTML file needed.
+// is generated automatically - no HTML file needed.
 // Add this file's path to ../manifest.js to include it.
 
 exampleWorkout(({
@@ -14,7 +14,7 @@ exampleWorkout(({
     exercises: [
       ["Push-up", "4 × AMRAP"],
       ["Pull-up", "3 × AMRAP"],
-      ["Air squat", "3 × 15–20"],
+      ["Air squat", "3 × 15-20"],
       ["Glute bridge", "3 × 15"],
       ["Plank", "3 × 45s"]
     ],

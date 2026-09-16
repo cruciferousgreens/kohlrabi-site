@@ -429,65 +429,7 @@ document.addEventListener('click', event => {
   });
 })();
 
-/* Comparison tables (switch.html): on narrow screens show the feature column
-   plus one app column at a time, switched with a segmented control above the
-   table. Built from the thead so it follows the markup; hidden on desktop
-   via CSS (.col-toggle). */
-(function () {
-  const wraps = document.querySelectorAll('.compare-wrap');
-  if (!wraps.length) return;
-  wraps.forEach((wrap) => {
-    const table = wrap.querySelector('.compare-table');
-    const scroller = wrap.querySelector('.table-scroll');
-    if (!table || !scroller) return;
-    const heads = table.querySelectorAll('thead th');
-    if (heads.length < 3) return;
-    const altName = heads[2].textContent.trim();
-    if (!altName) return;
-    table.setAttribute('data-show', 'cg');
 
-    const group = document.createElement('div');
-    group.className = 'col-toggle switcher';
-    group.setAttribute('role', 'radiogroup');
-    group.setAttribute('aria-label', 'Choose which app to compare');
-
-    const options = [
-      { value: 'cg', label: 'Kohlrabi' },
-      { value: 'alt', label: altName },
-    ];
-    const buttons = options.map((opt) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'switch-tab' + (opt.value === 'cg' ? ' active' : '');
-      b.setAttribute('role', 'radio');
-      b.setAttribute('aria-checked', opt.value === 'cg' ? 'true' : 'false');
-      b.dataset.value = opt.value;
-      b.textContent = opt.label;
-      b.addEventListener('click', () => select(opt.value));
-      group.appendChild(b);
-      return b;
-    });
-
-    function select(value) {
-      table.setAttribute('data-show', value);
-      buttons.forEach((b) => {
-        const on = b.dataset.value === value;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-checked', on ? 'true' : 'false');
-      });
-    }
-    group.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      const next = table.getAttribute('data-show') === 'cg' ? 'alt' : 'cg';
-      select(next);
-      const btn = buttons.find((b) => b.dataset.value === next);
-      if (btn) btn.focus();
-    });
-
-    wrap.insertBefore(group, scroller);
-  });
-})();
 
 /* Hero charts: draw the line and grow the bars shortly after load. */
 (function () {

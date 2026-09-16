@@ -1,7 +1,7 @@
 // assets/examples/workouts/dumbbell-essentials.js
-// Dumbbell essentials — example workout.
+// Dumbbell essentials - example workout.
 // Just fill in the fields below. The detail page (workouts/dumbbell-essentials.html)
-// is generated automatically — no HTML file needed.
+// is generated automatically - no HTML file needed.
 // Add this file's path to ../manifest.js to include it.
 
 exampleWorkout(({
@@ -12,10 +12,10 @@ exampleWorkout(({
     tags: "full-body beginner",
     tagLabel: "Full body",
     exercises: [
-      ["Goblet squat", "3 × 8–12"],
-      ["Dumbbell bench press", "3 × 8–12"],
-      ["One-arm row", "3 × 6–12"],
-      ["Romanian deadlift", "3 × 8–12"]
+      ["Goblet squat", "3 × 8-12"],
+      ["Dumbbell bench press", "3 × 8-12"],
+      ["One-arm row", "3 × 6-12"],
+      ["Romanian deadlift", "3 × 8-12"]
     ],
     attr: "A Kohlrabi original."
   }));

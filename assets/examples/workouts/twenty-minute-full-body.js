@@ -1,7 +1,7 @@
 // assets/examples/workouts/twenty-minute-full-body.js
-// The 20-minute full body — example workout.
+// The 20-minute full body - example workout.
 // Just fill in the fields below. The detail page (workouts/twenty-minute-full-body.html)
-// is generated automatically — no HTML file needed.
+// is generated automatically - no HTML file needed.
 // Add this file's path to ../manifest.js to include it.
 
 exampleWorkout(({
