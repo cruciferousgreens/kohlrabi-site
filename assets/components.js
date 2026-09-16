@@ -54,7 +54,7 @@
       '<nav class="site-nav" aria-label="Primary navigation">' +
         '<div class="nav-inner">' +
           '<a class="brand" href="' + r + 'index.html" aria-label="Kohlrabi home">' +
-            '<img src="' + r + 'assets/icon-mark.png" alt="" width="96" height="96" />' +
+            '<img src="' + r + 'assets/logo-wheat.png" alt="" width="96" height="96" />' +
             '<span>Kohlrabi</span>' +
           '</a>' +
           '<div class="nav-controls">' +
