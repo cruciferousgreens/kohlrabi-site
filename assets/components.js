@@ -35,7 +35,7 @@
   /* ---------- navigation ---------- */
 
   var NAV_LINKS = [
-    { page: 'features', href: 'features.html', label: 'Features' },
+    { page: 'switch', href: 'switch.html', label: 'Switch' },
     { page: 'examples', href: 'examples.html', label: 'Examples' },
     { page: 'glossary', href: 'glossary.html', label: 'Glossary' },
     { page: 'beta', href: 'beta.html', label: 'Beta' }
