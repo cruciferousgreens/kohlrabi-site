@@ -29,7 +29,8 @@ OUT_DIR = ROOT / 'assets' / 'css'
 # so never drop them.
 STATE_PAT = re.compile(r':hover|:focus|:active|:visited|\.open\b|\.in\b|\.show\b|\[aria-expanded'
                        r'|\.heat\b|\.heat-'  # heat-map fills are added by native.js after load
-                       r'|\.skeleton-card|\.sk\b')  # loading skeletons: build.py may inject real cards, removing them from coverage
+                       r'|\.skeleton-card|\.sk\b'  # loading skeletons: build.py may inject real cards, removing them from coverage
+                       r'|\[data-show')  # compare-table column toggle: coverage only sees the default state
 
 
 def parse_rules(css):

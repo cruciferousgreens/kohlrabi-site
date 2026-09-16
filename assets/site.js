@@ -452,7 +452,7 @@ document.addEventListener('click', event => {
     group.setAttribute('aria-label', 'Choose which app to compare');
 
     const options = [
-      { value: 'cg', label: 'Greens' },
+      { value: 'cg', label: 'Kohlrabi' },
       { value: 'alt', label: altName },
     ];
     const buttons = options.map((opt) => {
