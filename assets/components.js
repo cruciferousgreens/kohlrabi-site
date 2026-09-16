@@ -8,7 +8,7 @@
  *   <div data-cg="footer"></div>
  *
  * `data-page` marks the current section in the nav (features, examples,
- * glossary, why-kohlrabi, beta, pitch-in). Pages in a subdirectory (e.g. /workouts/) set
+ * glossary, beta, pitch-in). Pages in a subdirectory (e.g. /workouts/) set
  * `data-root="../"` so asset and page links resolve from there.
  *
  * This script runs synchronously at the end of <body>, before site.js, so
@@ -38,7 +38,6 @@
     { page: 'features', href: 'features.html', label: 'Features' },
     { page: 'examples', href: 'examples.html', label: 'Examples' },
     { page: 'glossary', href: 'glossary.html', label: 'Glossary' },
-    { page: 'why-kohlrabi', href: 'why-kohlrabi.html', label: 'Why Kohlrabi' },
     { page: 'beta', href: 'beta.html', label: 'Beta' }
   ];
 
@@ -97,7 +96,6 @@
             '</div>' +
             '<div class="footer-col">' +
               '<h3>About</h3>' +
-              '<a href="' + r + 'why-kohlrabi.html">Why Kohlrabi</a>' +
               '<a href="' + r + 'credits.html">Credits</a>' +
               '<a href="' + r + 'release-notes.html">Release notes</a>' +
               '<a href="' + r + 'ai-disclosure.html">AI disclosure</a>' +

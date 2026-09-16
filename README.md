@@ -45,7 +45,7 @@ To preview locally before pushing, serve the folder with any static server, e.g.
 
 | Path | What it is |
 |---|---|
-| `src/pages/` | Page sources: `index`, `features`, `examples`, `getting-started`, `switch`, `glossary`, `why-kohlrabi`, `beta`, `trainers`, `pitch-in`, `credits`, `release-notes`, `privacy`, `terms`, `ai-disclosure`, `program`, `workout` |
+| `src/pages/` | Page sources: `index`, `features`, `examples`, `getting-started`, `switch`, `glossary`, `beta`, `trainers`, `pitch-in`, `credits`, `release-notes`, `privacy`, `terms`, `ai-disclosure`, `program`, `workout` |
 | `src/components/` | `head.html`, `nav.html`, `footer.html`, noscript nav fallbacks |
 | `assets/components.js` | **Shared header nav + footer** — `NAV_LINKS` and `footer()` render every page's chrome |
 | `assets/site.css` | All styles |

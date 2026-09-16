@@ -6,3 +6,7 @@
 # .html -> pretty-URL 308, which would strip the slug from the address bar.)
 /workouts/*  /workout  200
 /programs/*  /program  200
+
+# Removed pages (301 to home so old links don't 404).
+/why-kohlrabi  /  301
+/why-kohlrabi.html  /  301

@@ -12,7 +12,6 @@ Kohlrabi is a free workout tracker by Cruciferous Greens: log every set, build f
 - [For trainers](https://getkohlrabi.com/trainers)
 - [Beta](https://getkohlrabi.com/beta)
 - [Release notes](https://getkohlrabi.com/release-notes)
-- [Why Kohlrabi](https://getkohlrabi.com/why-kohlrabi)
 - [Glossary](https://getkohlrabi.com/glossary)
 - [Credits](https://getkohlrabi.com/credits)
 - [Pitch in](https://getkohlrabi.com/pitch-in)

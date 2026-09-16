@@ -31,7 +31,6 @@ PAGES = [
     ('trainers', '0.8', 'monthly'),
     ('beta', '0.7', 'monthly'),
     ('release-notes', '0.6', 'monthly'),
-    ('why-kohlrabi', '0.6', 'yearly'),
     ('glossary', '0.5', 'monthly'),
     ('credits', '0.5', 'yearly'),
     ('pitch-in', '0.5', 'monthly'),
