@@ -18,6 +18,7 @@ const base = process.argv[2] || 'http://localhost:8901/';
 const pages = [
   ['index', ['index']],
   ['examples', ['examples', 'no-account']],
+  ['install', ['install']],
   ['features', ['features']],
   ['getting-started', ['getting-started']],
   ['switch', ['switch']],
@@ -50,6 +51,10 @@ for (const vp of [{w:393,h:852,name:'mobile'},{w:800,h:1000,name:'tablet'},{w:12
     await page.goto(url, {waitUntil: 'networkidle0', timeout: 30000}).catch(()=>{});
     // interact: scroll through, open the hamburger menu, close it
     await page.evaluate(async () => {
+      // Cycle guide toggles (install, features, switch, getting-started) so
+      // rules in hidden panels get used at least once and are recorded.
+      const guideTabs = [...document.querySelectorAll('.switch-tab[data-guide]')];
+      for (const t of guideTabs) { t.click(); await new Promise(r => setTimeout(r, 200)); }
       window.scrollTo(0, document.body.scrollHeight);
       await new Promise(r => setTimeout(r, 300));
       window.scrollTo(0, 0);

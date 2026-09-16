@@ -31,6 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://getkohlrabi.com/install</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://getkohlrabi.com/switch</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>

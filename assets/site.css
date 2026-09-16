@@ -32,3 +32,17 @@
 .data-card p{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
 .subpage.tight{padding-top:48px;padding-bottom:56px}
 @media (max-width:640px){.subpage.tight{padding-top:36px;padding-bottom:48px}.data-card{padding:22px}}
+/* install page: iPhone/Android toggle + numbered steps + screenshot placeholders */
+.install-toggle{margin:4px 0 30px}
+.install-steps{list-style:none;margin:0;padding:0;counter-reset:install-step;display:grid;gap:32px}
+.install-steps>li{counter-increment:install-step;display:grid;gap:14px}
+.install-step-head{display:flex;gap:14px;align-items:flex-start}
+.install-step-num{flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:15px}
+.install-step-num::before{content:counter(install-step)}
+.install-step-text{margin:0;padding-top:5px;font-size:16px;line-height:1.6;color:var(--ink)}
+.install-step-text a{color:var(--green-deep);font-weight:700}
+.install-shot{margin:0;max-width:300px}
+.install-shot img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+.install-diagram{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--surface)}
+.install-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:999px;background:var(--paper-deep);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.install-placeholder{aspect-ratio:9/16;max-height:400px;display:grid;place-items:center;padding:24px;border:2px dashed var(--line-strong);border-radius:18px;background:var(--paper-deep);color:var(--muted);font-size:13px;font-weight:650;text-align:center;line-height:1.5}

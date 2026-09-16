@@ -92,6 +92,7 @@
               '<a href="' + r + 'examples.html">Example workouts</a>' +
               '<a href="' + r + 'switch.html">Switch</a>' +
               '<a href="' + r + 'glossary.html">Glossary</a>' +
+              '<a href="' + r + 'install">Install the app</a>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h3>About</h3>' +
