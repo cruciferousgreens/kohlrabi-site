@@ -971,6 +971,16 @@
     .support-list h2 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.03em; }
     .support-list p { max-width: 650px; margin: 0 0 12px; color: var(--muted); line-height: 1.6; }
     .support-list a, .support-list strong, .inline-link a { color: var(--green-deep); font-size: 14px; font-weight: 780; text-underline-offset: 4px; }
+    /* Spread the word (pitch-in). */
+    .spread-word { margin-top: 84px; }
+    .spread-word h2 { font-size: 30px; letter-spacing: -.03em; margin: 0; }
+    .spread-word .subpage-lede { margin: 12px 0 30px; }
+    .share-row { display: flex; flex-wrap: wrap; gap: 26px; }
+    .share-item { display: flex; flex-direction: column; align-items: center; gap: 9px; text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 650; }
+    .share-item:hover { color: var(--ink); }
+    .share-circle { width: 54px; height: 54px; display: grid; place-items: center; border: 1.5px solid var(--line-strong); border-radius: 50%; color: var(--ink); background: transparent; transition: transform .15s ease, border-color .15s ease; }
+    .share-item:hover .share-circle { transform: translateY(-2px); border-color: var(--ink); }
+    .share-circle svg { width: 24px; height: 24px; }
     .inline-link { margin-top: 12px !important; }
     .credit-list { border-top: 1px solid var(--line); }
     .credit-list article { display: grid; grid-template-columns: minmax(180px, .65fr) 1fr; gap: 30px; padding: 24px 0; border-bottom: 1px solid var(--line); }
