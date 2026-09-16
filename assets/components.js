@@ -54,7 +54,7 @@
       '<nav class="site-nav" aria-label="Primary navigation">' +
         '<div class="nav-inner">' +
           '<a class="brand" href="' + r + 'index.html" aria-label="Kohlrabi home">' +
-            '<svg width="96" height="96" viewBox="0 0 192 192" aria-hidden="true" focusable="false"><rect width="192" height="192" rx="35" fill="#2e7d32"/><path d="M42 42L149 77L104 105L74 148Z" fill="none" stroke="#fff" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/></svg>' +
+            '<svg width="96" height="96" viewBox="0 0 192 192" aria-hidden="true" focusable="false"><rect width="192" height="192" rx="35" fill="#2e7d32"/><path d="M95.0 127.5L105.9 103.5L141.9 89.1L146.7 81.3L138.9 69.6L60.7 45.6L48.3 46.6L45.6 60.7L70.6 141.6L85.7 145.7L95.0 127.9Z" fill="none" stroke="#fff" stroke-width="10.6" stroke-linejoin="round" stroke-linecap="round"/></svg>' +
             '<span>Kohlrabi</span>' +
           '</a>' +
           '<div class="nav-controls">' +
