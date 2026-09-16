@@ -45,4 +45,5 @@
 .install-shot img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
 .install-diagram{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--surface)}
 .install-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:999px;background:var(--paper-deep);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.install-shot-sm{max-width:180px;margin-inline:auto}
 .install-placeholder{aspect-ratio:9/16;max-height:400px;display:grid;place-items:center;padding:24px;border:2px dashed var(--line-strong);border-radius:18px;background:var(--paper-deep);color:var(--muted);font-size:13px;font-weight:650;text-align:center;line-height:1.5}
