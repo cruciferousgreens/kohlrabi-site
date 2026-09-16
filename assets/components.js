@@ -89,17 +89,16 @@
             '<div class="footer-col">' +
               '<h3>The app</h3>' +
               '<a href="' + r + 'getting-started.html">Getting started</a>' +
-              '<a href="' + r + 'no-account">No account needed</a>' +
               '<a href="' + r + 'examples.html">Example workouts</a>' +
               '<a href="' + r + 'switch.html">Switch</a>' +
               '<a href="' + r + 'glossary.html">Glossary</a>' +
-              '<a href="' + r + 'beta.html">Beta</a>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h3>About</h3>' +
               '<a href="' + r + 'credits.html">Credits</a>' +
               '<a href="' + r + 'release-notes.html">Release notes</a>' +
-              '<a href="' + r + 'ai-disclosure.html">AI disclosure</a>' +
+              '<a href="' + r + 'beta.html">Beta</a>' +
+              '<a href="' + r + 'no-account">No account needed</a>' +
             '</div>' +
             '<div class="footer-col">' +
               '<h3>Cruciferous Greens</h3>' +
@@ -112,6 +111,7 @@
               '<h3>Legal</h3>' +
               '<a href="' + r + 'privacy.html">Privacy policy</a>' +
               '<a href="' + r + 'terms.html">Terms &amp; conditions</a>' +
+              '<a href="' + r + 'ai-disclosure.html">AI disclosure</a>' +
             '</div>' +
           '</nav>' +
         '</div>' +
