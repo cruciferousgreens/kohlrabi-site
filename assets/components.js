@@ -19,8 +19,6 @@
 
   var HEART_SVG = '<svg class="heart-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true"><path d="M12 20.7C6.4 16.7 3 13.3 3 9.6 3 7 5 5 7.6 5c1.8 0 3.4 1 4.4 2.6C13 6 14.6 5 16.4 5 19 5 21 7 21 9.6c0 3.7-3.4 7.1-9 11.1z"/></svg>';
   var MENU_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
-  var MOON_SVG = '<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>';
-  var SUN_SVG = '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>';
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -120,9 +118,6 @@
         '</div>' +
         '<div class="footer-base">' +
           '<span>© 2026 <a href="https://cruciferousgreens.com">Cruciferous Greens</a></span>' +
-          '<button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle night mode">' +
-            MOON_SVG + SUN_SVG +
-          '</button>' +
         '</div>' +
       '</footer>';
   }

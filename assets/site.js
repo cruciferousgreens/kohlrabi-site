@@ -1,26 +1,7 @@
 /* Cruciferous Greens site — shared behavior. */
 
-const THEME_KEY = 'cg-theme';
-const themeToggle = document.querySelector('.theme-toggle');
-const themeMeta = document.querySelector('meta[name="theme-color"]');
 const menuButton = document.querySelector('.menu-button');
 const navLinks = document.getElementById('navLinks');
-
-function getSavedTheme() {
-  try {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved === 'dark' || saved === 'light') return saved;
-  } catch (e) {}
-  return 'light';
-}
-
-function applyTheme(theme) {
-  const dark = theme === 'dark';
-  document.documentElement.classList.toggle('dark', dark);
-  themeToggle?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-  themeMeta?.setAttribute('content', dark ? '#1e1e2e' : '#faf4ed');
-  try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
-}
 
 function closeMenu() {
   navLinks?.classList.remove('open');
@@ -28,14 +9,8 @@ function closeMenu() {
   menuButton?.setAttribute('aria-label', 'Open menu');
 }
 
-applyTheme(getSavedTheme());
-
 /* Current-page highlighting is baked into the nav markup by components.js
    (data-page on the data-cg="nav" slot) — no runtime marking needed. */
-
-themeToggle?.addEventListener('click', () => {
-  applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
-});
 
 menuButton?.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
