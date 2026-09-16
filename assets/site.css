@@ -61,7 +61,7 @@
       letter-spacing: -.02em;
       white-space: nowrap;
     }
-    .brand img {
+    .brand img, .brand svg {
       width: 32px;
       height: 32px;
       border-radius: 9px;
@@ -1056,7 +1056,7 @@
     @media (max-width: 600px) {
       .nav-inner { height: 64px; width: calc(100% - 28px); }
       .brand { font-size: 16px; }
-      .brand img { width: 29px; height: 29px; }
+      .brand img, .brand svg { width: 29px; height: 29px; }
       .nav-links { top: 64px; }
       .hero { width: calc(100% - 32px); padding: 48px 0 62px; }
       h1 { font-size: clamp(46px, 13.8vw, 64px); max-width: none; }
