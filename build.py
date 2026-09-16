@@ -232,9 +232,9 @@ def build_detail_pages(v, ex):
 
     The detail pages used to be empty JS shells (served via _redirects
     rewrites) with canonicals pointing at the /workout and /program templates.
-    Static files take precedence over the _redirects 200-rewrites, so each
-    detail URL now serves unique, self-canonical content; the rewrites remain
-    as fallback for unknown slugs."""
+    Pages evaluates _redirects BEFORE static assets, so no _redirects rewrite
+    may cover these paths; each detail URL serves its own unique,
+    self-canonical static file. Unknown slugs get the site's 404 page."""
     built = 0
     (ROOT / 'workouts').mkdir(exist_ok=True)
     (ROOT / 'programs').mkdir(exist_ok=True)
