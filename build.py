@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Build the site: src/pages/*.html + src/components/*.html -> root *.html.
+"""Build the site: src/pages/*.html|*.md + src/components/*.html -> root *.html.
 
 Each page file is front-matter (title, description, canonical, nav_page, ...)
 followed by the <main> inner content -- the part you'd actually edit.
+.html sources are used verbatim; .md sources are converted to HTML with the
+vendored python-markdown (tools/vendor/), so text pages can be written in
+Markdown. Raw HTML passes straight through in .md files, so chips, cards,
+<details>, and other custom markup keep working untouched.
+
 Components hold the reusable shell: head, nav, footer.
 
 Usage:  python3 build.py        (run from the repo root)
@@ -20,6 +25,18 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / 'src'
 PAGES = SRC / 'pages'
 COMP = SRC / 'components'
+
+# Vendored pure-python markdown (no pip step needed on Pages).
+VENDOR = ROOT / 'tools' / 'vendor'
+if VENDOR.is_dir() and str(VENDOR) not in sys.path:
+    sys.path.insert(0, str(VENDOR))
+try:
+    import markdown as _md
+    HAVE_MARKDOWN = True
+except ImportError:
+    HAVE_MARKDOWN = False
+
+MD_EXTENSIONS = ['fenced_code', 'tables', 'sane_lists', 'md_in_html']
 
 OG_TAGS = '''<meta property="og:type" content="website">
 <meta property="og:site_name" content="Kohlrabi">
@@ -325,9 +342,19 @@ def main():
         print(f'warning: {e}; skipping server-rendered examples', file=sys.stderr)
         ex = None
     built = []
-    for path in sorted(PAGES.glob('*.html')):
+    page_paths = sorted(PAGES.glob('*.html')) + sorted(PAGES.glob('*.md'))
+    for path in page_paths:
+        is_md = path.suffix == '.md'
         meta, content = parse_page(path)
-        meta['_name'] = path.name
+        out_name = path.stem + '.html'
+        meta['_name'] = out_name
+        meta['_source'] = f'src/pages/{path.name}'
+        if is_md:
+            if not HAVE_MARKDOWN:
+                print(f'warning: {path.name}: markdown lib missing; skipping',
+                      file=sys.stderr)
+                continue
+            content = _md.markdown(content, extensions=MD_EXTENSIONS)
         if not meta.get('head_raw'):
             for k in ('title', 'description', 'canonical'):
                 assert meta.get(k), f'{path.name}: missing {k}'
@@ -335,8 +362,8 @@ def main():
             content = inject_example_cards(content, ex)
         if path.name == 'no-account.html' and ex:
             content = inject_spotlight_cards(content, ex)
-        (ROOT / path.name).write_text(render(meta, content, v))
-        built.append(path.name)
+        (ROOT / out_name).write_text(render(meta, content, v))
+        built.append(out_name)
     print(f'built {len(built)} pages (v={v})')
 
     if ex:
