@@ -82,7 +82,6 @@
         '<div class="footer-inner">' +
           '<div class="footer-brand-block">' +
             '<a class="footer-brand" href="' + r + 'index.html">Kohlrabi</a>' +
-            '<p class="footer-copy">Free workout tracking, by <a href="https://cruciferousgreens.com">Cruciferous Greens</a>.</p>' +
             '<a class="button primary footer-train" data-plausible="Train now" href="https://kohlrabi.us">Train now</a>' +
           '</div>' +
           '<nav class="footer-cols" aria-label="Footer">' +
@@ -102,7 +101,7 @@
               '<a href="' + r + 'no-account">No account needed</a>' +
             '</div>' +
             '<div class="footer-col">' +
-              '<h3>Cruciferous Greens</h3>' +
+              '<h3>More</h3>' +
               '<a href="https://cruciferousgreens.com/training">Coaching</a>' +
               '<a href="https://blog.cruciferousgreens.com">Blog</a>' +
               '<a href="https://buymeacoffee.com/cruciferousgreens">Donate</a>' +
