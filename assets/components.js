@@ -103,7 +103,7 @@
             '<div class="footer-col">' +
               '<h3>More</h3>' +
               '<a href="https://cruciferousgreens.com/training">Coaching</a>' +
-              '<a href="https://blog.cruciferousgreens.com">Blog</a>' +
+              '<a href="https://getkohlrabi.com/blog/">Blog</a>' +
               '<a href="https://buymeacoffee.com/cruciferousgreens">Donate</a>' +
               '<a href="' + r + 'pitch-in.html">Pitch in ' + HEART_SVG + '</a>' +
             '</div>' +
